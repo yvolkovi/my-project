@@ -10,7 +10,7 @@ function MyProfile(props) {
         {
             username: { value: 'Jenia', required: true, pattern: /^(?:[^l]+|l(?:$|[^a]|a(?:$|[^l])))*$/, errors: [] },
             email: { value: 'yvolkovi@yahoo.com', required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, errors: [] },
-            password: { value: 'goodbuy', required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/, errors: [] },
+            password: { value: '******', required: true, pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,}$/, errors: [] },
 
         }
 
@@ -108,19 +108,38 @@ function MyProfile(props) {
                                 onBlur={onInputChange}
                             />
                         </div>
-
-
-
-
                     </div>
+                    <div className="form-row text-left">
+                            <div className="col-md-6 mb-3">
+                                <label htmlFor="emailId">Email</label>
+                                <input type="text" className="form-control" id="emailId"
+                                    name="email"
+                                    defaultValue={user.email.value}
+                                    onBlur={onInputChange}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-row text-left">
+                            <div className="col-md-6 mb-3">
+                                <label htmlFor="passwordId">Password</label>
+                                <input type="text" className="form-control" id="passwordId"
+                                    name="password"
+                                    defaultValue={user.password.value}
+                                    onBlur={onInputChange}
+                                />
+
+                            </div>
+                        </div>
+                        
+                <button className="btn btn-primary" type="submit">Save</button>
+
                 </div>
 
-                <button className="btn btn-primary" type="submit">Save</button>
-            
 
-        </form>
-    </>
-);
+
+            </form>
+        </>
+    );
 }
 
 export default MyProfile;

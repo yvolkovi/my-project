@@ -199,7 +199,7 @@ return (
                         }
                     </div>
                 </div>
-                <button className="btn btn-primary" type="submit">Save</button>
+                <button className="btn btn-primary mt-3" type="submit">Save</button>
             </div>
 
         </form>

@@ -8,7 +8,7 @@ function RecipesPage(props) {
 
     <>     
       <div className='container'>
-        <h1>{props.name}</h1>
+        <h1>{props.title}</h1>
         <div className='row mb-2'>
           <div className='col-md-6'>
             Show Recipes

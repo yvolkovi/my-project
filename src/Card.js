@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Card(props) {
 
@@ -7,9 +8,9 @@ function Card(props) {
             <div className="card border-secondaryprimary text-white bg-dark" style={{ width: "18rem" }}>
                 <img src={props.card.image} className="card-img-top mb-0" alt="..." />
                 <div className="card-body mb-0">
-                    <a href="#" className="card-link">{props.card.linkname}</a>
-                    <p className="card-text mb-0">Uploaded at:{props.card.uploadedtime}</p>
-                    <p className="card-text mb-0">Last viewed at:{props.card.lastupdatedtime}</p>
+                    <Link to={`/recipe/${props.card.id}`} className="card-link">{props.card.linkname}</Link>
+                    <p className="card-text mb-0">Uploaded:{props.card.uploadedtime}</p>
+                    <p className="card-text mb-0">Viewed at:{props.card.lastupdatedtime}</p>
                     <p className="card-text">Views:{props.card.views}</p>
                 </div>
                 <div className="card-footer text-muted text-center">
