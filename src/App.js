@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import NewRecipeForm from './NewRecipeForm';
 import RecipesPage from './RecipesPage';
 import ExistingRecipe from './ExistingRecipe';
+import MyProfile from './MyProfile';
 
 
 function App() {
@@ -27,56 +28,10 @@ function App() {
 
     <>
       <Navbar />
-      <RecipesPage name={recipesName[1]} recipes={cards}/>
-      {/* <div className='container'>
-        <h1>All Recipes</h1>
-        <div className='row mb-2'>
-          <div className='col-md-6'>
-            Show Recipes
-          </div>
-          <div className='col-md-6'>
-            <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="showrecipes" id="mostpopularid" value="option1" />
-              <label className="form-check-label" htmlFor="mostpopularid">Most Popular</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="showrecipes" id="newestid" value="option2" />
-              <label className="form-check-label" htmlFor="newestid">The Newest</label>
-            </div>
-          </div>
-        </div>
-        <div className='row mb-2'>
-          <div className="col-md-6">
-            <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Search for a recipe" />
-          </div>
-        </div>
-        <div className='row mb-2'>
-          <div className="col-md-6">
-            <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Search by ingredient" />
-          </div>
-          <div className='col-md-6'>
-            <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="searchbyingredient" id="atleastoneid" value="option1" />
-              <label className="form-check-label" htmlFor="atleastoneid">At least one</label>
-            </div>
-            <div className="form-check form-check-inline">
-              <input className="form-check-input" type="radio" name="searchbyingredient" id="everyoneid" value="option2" />
-              <label className="form-check-label" htmlFor="everyoneid">EveryOne</label>
-            </div>
-          </div>
-        </div>
-        <br></br>
+      <MyProfile />
 
-        <div className='row '>
-          {
-            cards.map(card => <Card key={card.linkname} card={card}/>)
-          }
-          
-        </div>
-
-      </div> */}
-
-<ExistingRecipe />
+      {/* <RecipesPage name={recipesName[1]} recipes={cards}/> */}
+  {/* <ExistingRecipe /> */}
 
 
     </>
