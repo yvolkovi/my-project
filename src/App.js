@@ -6,6 +6,7 @@ import './App.css';
 import Navbar from './Navbar';
 import NewRecipeForm from './NewRecipeForm';
 import RecipesPage from './RecipesPage';
+import RecipesPage2 from './RecipesPage2';
 import ExistingRecipe from './ExistingRecipe';
 import MyProfile from './MyProfile';
 import RecipeDetails from './RecipeDetails';
@@ -26,10 +27,10 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Route path="/" exact={true}>
-        <RecipesPage title="All Reciepes" recipes={recipes} />
+        <RecipesPage2 title="All Reciepes" recipes={recipes} />
       </Route>
       <Route path="/all-recipes">
-        <RecipesPage title="All Reciepes" recipes={recipes} />
+        <RecipesPage2 title="All Reciepes" recipes={recipes} />
       </Route>
       <Route path="/my-recipes">
         <RecipesPage title="My Reciepes" recipes={recipes} />

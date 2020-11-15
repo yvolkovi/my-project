@@ -1,28 +1,51 @@
 import React from 'react';
-import {Link, useRouteMatch} from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 
-import {getRecipe} from './api/recipes';
+import { getRecipe } from './api/recipes';
 
 function RecipeDetails() {
-    const {params: {id}} = useRouteMatch('/recipe/:id');
+    const { params: { id } } = useRouteMatch('/recipe/:id');
     console.log(id);
     const recipe = getRecipe(id);
     console.log(recipe);
     return (
-        <div className='col-md-3 mb-3 ml-3'>
-        <div className="card border-secondaryprimary text-white bg-dark" style={{ width: "18rem" }}>
-            <img src={recipe.image} className="card-img-top mb-0" alt="..." />
-            <div className="card-body mb-0">
-                <a href="#" className="card-link">{recipe.linkname}</a>
-                <p className="card-text mb-0">Uploaded:{recipe.uploadedtime}</p>
-                <p className="card-text mb-0">Viewed at:{recipe.lastupdatedtime}</p>
-                <p className="card-text">Views:{recipe.views}</p>
+        <div className='container'>
+            <h1>Recipe's Details</h1>
+            <div className='row'>
+                <div className='col-md-4'>
+                    {/* <img src={"/images/pancake.jfif"} alt="Recipe's Details"></img> */}
+                    <img src={recipe.image} alt="Recipe's Details"></img>
+                </div>
+                <div className='col-md-8'>
+                    <div className='row mb-3'>
+                        <div className='col-md-4 mr-1 font-weight-bold'>Name:  </div>
+                        <div className='col-md-6 ml-1'>{recipe.linkname}</div>
+                    </div>
+                    <div className='row mb-3'>
+                        <div className='col-md-4 mr-1 font-weight-bold'>Original's Site Name:  </div>
+                        <div className='col-md-6 ml-1'>{recipe.sitename}</div>
+                    </div>
+                    <div className='row mb-3'>
+                        <div className='col-md-4 mr-1 font-weight-bold'>Original's Site Link:  </div>
+                        <div className='col-md-6 ml-1'>{recipe.sitelink}</div>
+                    </div>
+                    <div className='row mb-3'>
+                        <div className='col-md-4 mr-1 font-weight-bold'>Category:  </div>
+                        <div className='col-md-6 ml-1'>{recipe.category}</div>
+                    </div>
+                    <div className='row mb-3' >
+                        <div className='col-md-4 mr-1 font-weight-bold'> Description: </div>
+                        <div className='col-md-4 mr-1'>{recipe.description} </div>
+                    </div >
+                </div>
             </div>
-            <div className="card-footer text-muted text-center">
-                <a href="#" className="btn btn-light">Edit</a>
+            <div className='row mt-3'>
+                <div className='col-md-2'>
+                    <button type="button" className="btn btn-dark">Back</button>
+                </div>
             </div>
         </div>
-    </div>
+
     );
 
 }
